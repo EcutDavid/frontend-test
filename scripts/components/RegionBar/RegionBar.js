@@ -3,9 +3,6 @@ import './RegionBar.scss';
 import VoteInfoActionCreator from '../../actions/VoteInfoActionCreator';
 
 export default class RegionBar extends React.Component{
-  constructor(){
-    super();
-  }
   _expand(){
     VoteInfoActionCreator.expandList(this.props.id);
   }

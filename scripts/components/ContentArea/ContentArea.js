@@ -9,11 +9,11 @@ export default class ContentArea extends React.Component{
     super();
   }
   render(){
-    let voteInfoBars = this.props.voteDataList.map((item) => {
+    let voteInfoBars = this.props.voteDataList.map((item, index) => {
       return (
         item.display === false ? '' :
         <RegionBar {...item} areaTitles = {['State', 'District', 'Township']}
-          canExpand = {item.subItemCount === 0 ? false : true}/>
+          canExpand = {item.subItemCount === 0 ? false : true} key = {index}/>
       );
     });
     return (
@@ -26,12 +26,3 @@ export default class ContentArea extends React.Component{
     );
   }
 }
-
-// <RegionBar {...data} canExpand={true} subItemCount={3} />
-// <RegionBar {...data} canExpand={false}/>
-// <RegionBar {...data} areaLevel ={1} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
-// <RegionBar {...data} areaLevel ={2} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
-// <RegionBar {...data} areaLevel ={2} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
-// <RegionBar {...data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
-// <RegionBar {...data} areaLevel ={1} canExpand={true} areaTitles={['State', 'District', 'Township']}/>
-// <RegionBar {...data} canExpand={false} areaTitles={['State', 'District', 'Township']}/>
